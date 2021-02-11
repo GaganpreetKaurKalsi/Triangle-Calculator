@@ -152,12 +152,13 @@ body{
 .calculate-area .option{
     margin : 10px 0;
     text-align: left;
+    width: 430px;
+    margin: auto;
 }
 .calculate-area .options-div{
     max-width : 600px;
     width : 90%;
     margin : 50px auto;
-    padding-left : 5rem;
 }
 .calculate-area label{
     margin-left : 5px;
@@ -268,6 +269,16 @@ footer{
     }
     .check-triangle, .calculate-hyp, .calculate-area, .quiz{
         margin : 50px auto;
+    }
+    .calculate-area .option{
+        width : auto;
+    }
+    .calculate-area .options-div{
+        padding-left : 5px;
+        padding-right : 5px;
+        margin-left : 0;
+        margin-right: 0;
+        width : 100%;
     }
 }
 
