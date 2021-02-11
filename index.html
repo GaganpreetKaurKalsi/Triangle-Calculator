@@ -70,20 +70,31 @@
             </div>
         </div>
         <div class="base-height area">
-            <label for="base">base = </label>
-            <input type="number" name="base" class="side input-box" id = "base">
-            <label for="height">height = </label>
-            <input type="number" name="height" class="side input-box" id = "height">
+            <div class="inline center">
+                <label for="base">base = </label>
+                <input type="number" name="base" class="side input-box" id = "base">
+            </div>
+            <div class="inline center">
+                <label for="height">height = </label>
+                <input type="number" name="height" class="side input-box" id = "height">
+            </div>
             <button class="next-line" onclick = "baseHeight('base-height')">Calculate</button>
         </div>
 
         <div class="sides area">
-            <label for="a">a = </label>
-            <input type="number" name="a" class="side input-box" id = "a">
-            <label for="b">b = </label>
-            <input type="number" name="b" class="side input-box" id = "b">
-            <label for="c">c = </label>
-            <input type="number" name="c" class="side input-box" id = "c">
+            <div class="inline center">
+                <label for="a">a = </label>
+                <input type="number" name="a" class="side input-box" id = "a">
+            </div>
+            <div class="inline center">
+                <label for="b">b = </label>
+                <input type="number" name="b" class="side input-box" id = "b">
+            </div>
+            <div class="inline center">
+                <label for="c">c = </label>
+                <input type="number" name="c" class="side input-box" id = "c">
+            </div>
+            
             <button class="next-line" onclick = "sides('sides')">Calculate</button>
         </div>
 
@@ -94,12 +105,18 @@
         </div>
 
         <div class="side-angle area">
-            <label for="side1">side1 = </label>
-            <input type="number" name="side1" class="side input-box" id = "side1">
-            <label for="side2">side2 = </label>
-            <input type="number" name="side2" class="side input-box" id = "side2">
-            <label for="angle">&angle; = </label>
-            <input type="number" name="angle" class="angle input-box" id = "angle">
+            <div class="inline center">
+                <label for="side1">side1 = </label>
+                <input type="number" name="side1" class="side input-box" id = "side1">
+            </div>
+            <div class="inline center">
+                <label for="side2">side2 = </label>
+                <input type="number" name="side2" class="side input-box" id = "side2">
+            </div>
+            <div class="inline center">
+                <label for="angle">&angle; = </label>
+                <input type="number" name="angle" class="angle input-box" id = "angle">
+            </div>
             <button class="next-line" onclick = "sideAngle('side-angle')">Calculate</button>
         </div>
         <div class="result" id="result"></div>
