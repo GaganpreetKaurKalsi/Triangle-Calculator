@@ -280,7 +280,15 @@ footer{
         margin-right: 0;
         width : 100%;
     }
+    .calculate-area{
+        padding-bottom : 20px;
+    }
 }
 .center{
     text-align : center;
 }
+.calculate-area .padd{
+    margin-top : 40px;
+}
+
+
