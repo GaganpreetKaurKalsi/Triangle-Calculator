@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Pangolin&family=Playfair+Display&family=Source+Sans+Pro&family=Ubuntu&display=swap');
+:root{
+    --primary-color : #EA580C;
+    --primary-light : #F97316;
+    --primary-dark : #C2410C;
+    --theme1 : rgb(209, 213, 219);
+    --theme2 : rgb(56, 189, 248);
+}
+
+*:focus{
+    outline : none;
+}
+
+*{
+    padding : 0;
+    font-family: 'Work Sans', sans-serif;
+    margin : 0;
+    box-sizing: border-box;
+    font-family: 'Big Shoulders Display', cursive;
+    /* letter-spacing: 2px; */
+    /* font-family: 'Merriweather', serif; */
+/* font-family: 'Pangolin', cursive; */
+/* font-family: 'Playfair Display', serif; */
+/* font-family: 'Source Sans Pro', sans-serif; */
+font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    
+}
+
+.head{
+    color : white;
+    background-color: var(--primary-color);
+    padding : 30px;
+    border-bottom-left-radius: 1.5rem;
+}
+.head h1{
+    font-size : 33px;
+    font-family: 'Big Shoulders Display', cursive;
+    letter-spacing: 2px;
+    padding : 10px 0;
+}
+.head .nav-bar{
+    list-style: none;
+    text-align : right;
+}
+.head .nav-bar li{
+    display : inline-block;
+    padding : 0 1rem;
+    font-weight : 500;
+}
+.head .nav-bar li .link{
+    text-decoration: none;
+    color : white;
+}
+
+.container-div{
+    max-width : 800px;
+    width : 310px;
+    margin : 50px auto;
+}
+.square{
+    background-color: var(--primary-light);
+    /* display: inline-block; */
+    height : 150px;
+    width : 150px;
+    margin-bottom : 5px;
+    margin-right : 1px;
+    display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  font-size : 20px;
+    text-align: center;
+    padding : 9px;
+    /* border : 2px solid var(--primary-color); */
+    box-sizing: border-box;
+}
+.square:hover{
+    /* background-color: var(--primary-color); */
+    transform: scale(1.25, 1.25);
+    /* transform: rotate(180deg); */
+    transition: transform 0.5s;
+}
+.check-triangle, .calculate-hyp, .calculate-area, .quiz{
+    text-align : center;
+    max-width : 800px;
+    width : 95%;
+    padding : 50px;
+    margin : 100px auto;
+    background-color: black;
+    color : var(--primary-color);
+}
+.check-triangle h2, .calculate-hyp h2, .calculate-area h1{
+    margin : 20px;
+}
+.check-triangle input, .calculate-hyp input, .base-height input, .sides input, .equi-triangle input, .side-angle input{
+    height : 50px;
+    width : 50px;
+    margin : 10px;
+    padding-left : 10px;
+    padding-right : 2px;
+}
+.calculate-hyp label , .calculate-area label{
+    font-size : 20px;
+}
+.calculate-hyp small{
+    color : white;
+    margin-bottom : 30px;
+}
+.sides-div{
+    margin-top : 20px;
+}
+.check-triangle button, .calculate-hyp button, .calculate-area button, .quiz .quiz-submit{
+    padding : 10px 20px;
+    font-size : 16px;
+    background-color: white;
+    border : 1px solid var(--primary-color);
+    color : var(--primary-color);
+    font-weight : bold;
+    border-radius : 10px;
+    margin-top : 20px;
+}
+.quiz .quiz-submit{
+    background-color: black;
+    font-size : 20px;
+}
+.quiz small{
+    display: block;
+    margin : 20px 0;
+    color : rgba(255, 255, 255, 0.877);
+    font-style: italic;
+}
+.next-line{
+    display : block;
+    margin : auto;
+    margin-top : 10px;
+}
+.result{
+    color : white;
+    font-size : 22px;
+    margin : 30px;
+}
+.calculate-area p{
+    color : white;
+    font-size : 18px;
+}
+.calculate-area .option{
+    margin : 10px 0;
+    text-align: left;
+}
+.calculate-area .options-div{
+    max-width : 600px;
+    width : 90%;
+    margin : 50px auto;
+    padding-left : 5rem;
+}
+.calculate-area label{
+    margin-left : 5px;
+}
+.calculate-area .options-div button{
+    width : 21px;
+    height : 21px;
+    border-radius: 50%;
+    padding : 0;
+}
+.area, .show{
+    visibility : collapse;
+    display: none;
+}
+
+
+/* Styles for footer */
+footer{
+    background-color:var(--primary-color);
+    padding : 1.5rem;
+    text-align : center;
+    color : rgb(255, 255, 255);
+    border-top-right-radius : 1rem;
+    padding-top : 2.5rem;
+}
+.footer .footer-header{
+    font-weight : bold;
+    font-size:large;
+}
+.footer .link{
+    color : white;
+}
+.footer ul{
+    padding-inline-start : 0px;
+    padding-top : 30px;
+}
+.list-item-inline{
+    display : inline;
+    padding : 0rem 0.5rem;
+}
+.list{
+    list-style: none;
+}
+.link-footer{
+    text-decoration : none;
+    padding : 0.5rem 2rem;
+    margin-top : 1rem;
+    margin-bottom : 1rem;
+    color : white;
+}
+/* --------------------------------------- */
+
+
+.quiz h1{
+    color : white;
+    letter-spacing: 15px;
+    margin-bottom : 30px;
+}
+.line{
+    background-color: var(--primary-light);
+    margin-bottom : 20px;
+}
+
+.question{
+    margin : 15px 0;
+    background-color : var(--primary-light);
+    color : black;
+    padding : 20px 5px;
+    padding-bottom : 25px;
+    font-size : 17px;
+}
+.question p{
+    padding : 10px;
+    margin-bottom : 5px;
+}
+.question label{
+    margin-right : 15px;
+}
+#quiz #result{
+    color : currentColor;
+    font-size : 1.5rem;
+}
+.inline{
+    display: inline-block;
+}
+
+@media only screen and (max-width : 800px){
+    .quiz{
+        padding : 50px 20px;
+        width:98%;
+    }
+}
+
+@media only screen and (max-width : 700px){
+    .quiz{
+        padding : 50px 20px;
+        width:98%;
+    }
+    .inline, .question p{
+        max-width : 300px;
+        width:80%;
+        text-align : left;
+        margin : auto; 
+        display: block;
+    }
+    .question p{
+        padding : 10px 0;
+    }
+    .check-triangle, .calculate-hyp, .calculate-area, .quiz{
+        margin : 50px auto;
+    }
+}
+

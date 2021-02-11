@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIpedia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d733855d1a.js" crossorigin="anonymous"></script>
+    <style type = "text/javascript"></style>
+</head>
+<body>
+    <div class="head">
+        <h1>TRIPedia 🛆</h1>
+        <ul class="nav-bar">
+            <li><a href="https://gaganpreetkaurkalsi.netlify.app/" class="link">Portfolio</a></li>
+            <li><a href="\" class="link">Who am I?</a></li>
+        </ul>
+    </div>
+    <!-- <div class="heading">
+        <h1>TRIPedia === Encyclopedia for Triangles</h1>
+    </div> -->
+    <div class="container-div">
+        <div class="square" onclick = "show('check-triangle')">Is it a Triangle?</div>
+        <div class="square" onclick = "show('calculate-hyp')">Check Hypotenuse</div>
+        <div class="square" onclick = "show('calculate-area')">Calculate Area</div>
+        <div class="square" onclick = "show('quiz')">Quiz</div>
+    </div>
+    <div class="check-triangle show">
+        <h2>Enter the angles in the below input boxes to check if they belong to a triangle</h2>
+        <div class="angles-div">
+            <input type="number" name="" class="angle" id = "angle1">
+            <input type="number" name="" class="angle" id = "angle2">
+            <input type="number" name="" class="angle" id = "angle3">
+        </div>
+        <button onclick = "checkAngles()">Submit</button>
+        <div class="result" id="result"></div>
+    </div>
+    <div class="calculate-hyp show">
+        <h2>Enter the lengths of base and height of a right angled triangle in the below input boxes to calculate the length of hypotenuse</h2>
+        <small>Note : Please enter the lengths in same unit.</small>
+        <div class="sides-div">
+            <label for="a">a = </label>
+            <input type="number" name="a" class="angle" id = "sidea">
+            <label for="b">b = </label>
+            <input type="number" name="b" class="angle" id = "sideb">
+        </div>
+        <button onclick = "calculateHyp()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+    <div class="calculate-area show" id = "calculate-area">
+        <h1>Area Calculator</h1>
+        <p>Choose the options below based on the information you have to calculate the area of the triangle</p>
+        <div class="options-div" id="options-div">
+            <div class="option">
+                <button id="base-height" onclick="selectbtn('base-height')"></button>
+                <label for="base-height">Given base and height</label>
+            </div>
+            <div class="option">
+                <button id="sides" onclick="selectbtn('sides')"></button>
+                <label for="sides">Given length of sides</label>
+            </div>
+            <div class="option">
+                <button id="equi-triangle" onclick="selectbtn('equi-triangle')"></button>
+                <label for="equi-triangle">Given the side of an equilateral triangle</label>
+            </div>
+            <div class="option">
+                <button id="side-angle" onclick="selectbtn('side-angle')"></button>
+                <label for="side-angle">Given 2 adjacent sides and included triangle</label>
+            </div>
+        </div>
+        <div class="base-height area">
+            <label for="base">base = </label>
+            <input type="number" name="base" class="side input-box" id = "base">
+            <label for="height">height = </label>
+            <input type="number" name="height" class="side input-box" id = "height">
+            <button class="next-line" onclick = "baseHeight('base-height')">Calculate</button>
+        </div>
+
+        <div class="sides area">
+            <label for="a">a = </label>
+            <input type="number" name="a" class="side input-box" id = "a">
+            <label for="b">b = </label>
+            <input type="number" name="b" class="side input-box" id = "b">
+            <label for="c">c = </label>
+            <input type="number" name="c" class="side input-box" id = "c">
+            <button class="next-line" onclick = "sides('sides')">Calculate</button>
+        </div>
+
+        <div class="equi-triangle area">
+            <label for="abc">a = b = c = </label>
+            <input type="number" name="abc" class="side input-box" id = "abc">
+            <button class="next-line" onclick = "equiTriangle('equi-triangle')">Calculate</button>
+        </div>
+
+        <div class="side-angle area">
+            <label for="side1">side1 = </label>
+            <input type="number" name="side1" class="side input-box" id = "side1">
+            <label for="side2">side2 = </label>
+            <input type="number" name="side2" class="side input-box" id = "side2">
+            <label for="angle">&angle; = </label>
+            <input type="number" name="angle" class="angle input-box" id = "angle">
+            <button class="next-line" onclick = "sideAngle('side-angle')">Calculate</button>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <div class="quiz show" id = "quiz">
+        <h1>QUIZ</h1>
+        <hr class="line">
+        <section class="question">
+            <p>This type of triangle has one 90&deg; angle.</p>
+            <div class="inline">
+                <input type="radio" name="1" id="">
+                <label for="1">Acute</label>
+            </div>
+            
+            <div class="inline">
+            <input type="radio" name="1" id="" class="ans">
+            <label for="1">Right</label>
+            </div>
+
+            <div class="inline">
+                <input type="radio" name="1" id="">
+                <label for="1">Obtuse</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>If you add up the degrees of each angle on a triangle, what is the sum?</p>
+
+            <div class="inline">
+                <input type="radio" name="2" id="">
+                <label for="2">90&deg;</label>
+            </div>
+            <div class="inline">
+                <input type="radio" name="2" id="" class="ans">
+                <label for="2">180&deg;</label>
+            </div>
+            <div class="inline">
+                <input type="radio" name="2" id="">
+                <label for="2">360&deg;</label>
+            </div>
+        </section>
+
+        <section class="question">
+            <p>What triangle is it called when all three sides are the same?</p>
+            <div class="inline">
+                <input type="radio" name="3" id="">
+                <label for="3">Scalene</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="3" id="">
+                <label for="3">Isosceles</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="3" id="" class="ans">
+                <label for="3">Equilateral</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>What triangle is it called when two sides are the same and only one is different?</p>
+            <div class="inline">
+                <input type="radio" name="4" id="">
+                <label for="4">Scalene</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="4" id="" class="ans">
+                <label for="4">Isosceles</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="4" id="">
+                <label for="4">Equilateral</label>
+            </div>
+        </section>
+
+
+        <section class="question">
+            <p>A ________ triangle is one where all 3 angles measure less than 90 degrees.</p>
+            <div class="inline">
+                <input type="radio" name="5" id="" class="ans">
+                <label for="5">Acute</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="5" id="">
+                <label for="5">Right</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="5" id="">
+                <label for="5">Obtuse</label>
+            </div>
+            
+        </section>
+
+
+        <section class="question">
+            <p>A triangle where all sides are congruent is called</p>
+
+            <div class="inline">
+                <input type="radio" name="6" id="">
+                <label for="6">Scalene</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="6" id="">
+                <label for="6">Isosceles</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="6" id="" class="ans">
+                <label for="6" >Equilateral</label>
+            </div>
+            
+        </section>
+
+
+        <section class="question">
+            <p>A triangle with one angle greater than 90&deg;</p>
+
+            <div class="inline">
+                <input type="radio" name="7" id="">
+                <label for="7">equilateral triangle</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="7" id="" class="ans">
+                <label for="7">obtuse triangle</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="7" id="">
+                <label for="7" class="">acute triangle</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="7" id="">
+                <label for="7" class="">isosceles triangle</label>
+            </div>
+            
+        </section>
+
+
+        <section class="question">
+            <p>In right triangle, the side opposite to right angle is called</p>
+
+            <div class="inline">
+                <input type="radio" name="8" id="">
+                <label for="8">altitude</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="8" id="" class="ans">
+                <label for="8">hypotenuse</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="8" id="">
+                <label for="8" class="">angle bisector</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>The perimeter of an equilateral triangle is 15cm. What is the length of one side?</p>
+
+            <div class="inline">
+                <input type="radio" name="9" id="">
+                <label for="9">3</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="9" id="">
+                <label for="9">45</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="9" id="">
+                <label for="9">15</label>    
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="9" id="" class="ans">
+                <label for="9">5</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>What is the name of the segment that joins the midpoints of the sides of a triangle?</p>
+
+            <div class="inline">
+                <input type="radio" name="10" id="">
+                <label for="10">Median</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="10" id="" class="ans">
+                <label for="10">Midsegment</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="10" id="">
+                <label for="10">Vertex</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="10" id="">
+                <label for="10">Centroid</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>Which center is equidistant from the vertices of a triangle.</p>
+
+            <div class="inline">
+                <input type="radio" name="11" id="">
+                <label for="11">Incenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="11" id="">
+                <label for="11">Centroid</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="11" id="" class="ans">
+                <label for="11">Circumcenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="11" id="">
+                <label for="11">Orthocenter</label>
+            </div>
+            
+        </section>
+
+
+        <section class="question">
+            <p>Which triangle center is the balance point of the triangle.</p>
+            <div class="inline">
+                <input type="radio" name="12" id="">
+                <label for="12">Incenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="12" id=""  class="ans">
+                <label for="12">Centroid</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="12" id="">
+                <label for="12">Circumcenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="12" id="">
+                <label for="12">Orthocenter</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>What is the name of the segment that joins a vertex to the midpoint of the opposite side in a triangle?</p>
+
+            <div class="inline">
+                <input type="radio" name="13" id="">
+                <label for="13">Midsegment</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="13" id="" class="ans" >
+                <label for="13">Median</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="13" id="">
+                <label for="13">Vertex</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="13" id="">
+                <label for="13">Centroid</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>What center is created by constructing the angle bisectors of a triangle?</p>
+
+            <div class="inline">
+                <input type="radio" name="14" id="">
+                <label for="14">Circumcenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="14" id="">
+                <label for="14">Centroid</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="14" id="">
+                <label for="14">Orthocenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="14" id="" class="ans">
+                <label for="14">Incenter</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>What is the point of concurrency of the altitudes?</p>
+
+            <div class="inline">
+                <input type="radio" name="15" id="">
+                <label for="15">Circumcenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="15" id="">
+                <label for="15">Centroid</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="15" id="" class="ans">
+                <label for="15">Orthocenter</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="15" id="">
+                <label for="15">Incenter</label>
+            </div>
+            
+        </section>
+
+        <section class="question">
+            <p>What is the name of a ray that divides an angle into two equal angles?</p>
+
+            <div class="inline">
+                <input type="radio" name="16" id="">
+                <label for="16">Perpendicular Bisector</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="16" id="" class="ans">
+                <label for="16">Angle Bisector</label>    
+            </div>
+
+            <div class="inline">
+                <input type="radio" name="16" id="">
+                <label for="16">Midpoint</label>
+            </div>
+            
+            <div class="inline">
+                <input type="radio" name="16" id="">
+                <label for="16">Median</label>
+            </div>
+            
+        </section>
+
+        <button class="quiz-submit" onclick = "calculatePoints()">Submit</button>
+        <small>NOTE : 1 mark for every correct answer. No negative marking.</small>
+        <div class="result" id = "result"></div>
+    </div>
+    
+
+    <footer class = "footer">
+        <div class = "footer-header">social media presence</div>
+        <ul class="social-links list">
+            <li class = "list-item-inline"><a href="https://github.com/GaganpreetKaurKalsi" class = "link-footer"><i class="fab fa-github"></i></a></li>
+            <li class = "list-item-inline"><a href="https://www.linkedin.com/in/gaganpreet-kaur-kalsi-2a6650191/" class = "link-footer"><i class="fab fa-linkedin-in"></i></a></li>
+            <li class = "list-item-inline"><a href="https://www.instagram.com/gagan_singhkalsi11/" class = "link-footer"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
