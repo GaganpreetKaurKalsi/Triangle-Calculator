@@ -12,11 +12,12 @@ function checkAngles(){
 }
 
 function calculateHyp(){
+    console.log("Entered");
     var sidea = parseInt(document.getElementById("sidea").value);
     var sideb = parseInt(document.getElementById("sideb").value);
     var sidec = Math.sqrt(Math.pow(sidea, 2) + Math.pow(sideb, 2));
     sidec = sidec.toFixed(3); // .toFixed() used to round to a particular number of digits after decimal
-    document.getElementById("result").innerText = `The length of Hypotenuse is ${sidec} units`;
+    document.getElementById("calculate-hyp").querySelector("#result").innerText = `The length of Hypotenuse is ${sidec} units`;
 }
 
 function selectbtn(id){
@@ -46,14 +47,18 @@ function show(className){
         element.style.visibility = "collapse";
         element.style.display = "none";
     });
+    document.querySelector("."+className).querySelectorAll(".clear").forEach(e => e.value = "");
+    document.querySelector("."+className).querySelector("#result").innerText = "";
     document.querySelector("."+className).style.visibility = "visible";
     document.querySelector("."+className).style.display = "block";
+    
 }
 
 function baseHeight(className){
     var base = document.querySelector("."+className).querySelector("#base").value;
     var height = document.querySelector("."+className).querySelector("#height").value;
     var area = 0.5*base*height;
+    area = area.toFixed(3);
     document.getElementById("calculate-area").querySelector("#result").innerText = `The area of the triangle is ${area} units`;
 }
 
@@ -65,12 +70,14 @@ function sides(className){
     var s = 0.5*(a+b+c);
     console.log("semi perimeter : " + s);
     var area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+    area = area.toFixed(3);
     document.getElementById("calculate-area").querySelector("#result").innerText = `The area of the triangle is ${area} units`;
 }
 
 function equiTriangle(className){
     var s = document.querySelector("."+className).querySelector("#abc").value;
     var area = 0.433 * s * s;
+    area = area.toFixed(3);
     document.getElementById("calculate-area").querySelector("#result").innerText = `The area of the triangle is ${area} units`;
 }
 
@@ -91,8 +98,6 @@ function calculatePoints(){
         if(element.checked){
             marks = marks+1;
         }
-        
     });
-    console.log(correctAns);
     document.getElementById("quiz").querySelector("#result").innerText = `Your total score : ${marks}/${correctAns.length}`;
 }

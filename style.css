@@ -28,8 +28,8 @@
 font-family: 'Ubuntu', sans-serif;
 }
 
-body{
-    
+.cursor{
+    cursor :pointer;
 }
 
 .head{
@@ -186,7 +186,6 @@ footer{
 }
 .footer .footer-header{
     font-weight : bold;
-    font-size:large;
 }
 .footer .link{
     color : white;

@@ -21,31 +21,31 @@
         <h1>TRIPedia === Encyclopedia for Triangles</h1>
     </div> -->
     <div class="container-div">
-        <div class="square" onclick = "show('check-triangle')">Is it a Triangle?</div>
-        <div class="square" onclick = "show('calculate-hyp')">Check Hypotenuse</div>
-        <div class="square" onclick = "show('calculate-area')">Calculate Area</div>
-        <div class="square" onclick = "show('quiz')">Quiz</div>
+        <div class="square cursor" onclick = "show('check-triangle')">Is it a Triangle?</div>
+        <div class="square cursor" onclick = "show('calculate-hyp')">Check Hypotenuse</div>
+        <div class="square cursor" onclick = "show('calculate-area')">Calculate Area</div>
+        <div class="square cursor" onclick = "show('quiz')">Quiz</div>
     </div>
     <div class="check-triangle show">
         <h2>Enter the angles in the below input boxes to check if they belong to a triangle</h2>
         <div class="angles-div">
-            <input type="number" name="" class="angle" id = "angle1">
-            <input type="number" name="" class="angle" id = "angle2">
-            <input type="number" name="" class="angle" id = "angle3">
+            <input type="number" name="" class="angle clear" id = "angle1">
+            <input type="number" name="" class="angle clear" id = "angle2">
+            <input type="number" name="" class="angle clear" id = "angle3">
         </div>
-        <button onclick = "checkAngles()">Submit</button>
+        <button class="cursor" onclick = "checkAngles()">Submit</button>
         <div class="result" id="result"></div>
     </div>
-    <div class="calculate-hyp show">
+    <div class="calculate-hyp show" id = "calculate-hyp">
         <h2>Enter the lengths of base and height of a right angled triangle in the below input boxes to calculate the length of hypotenuse</h2>
         <small>Note : Please enter the lengths in same unit.</small>
         <div class="sides-div">
             <label for="a">a = </label>
-            <input type="number" name="a" class="angle" id = "sidea">
+            <input type="number" name="a" class="angle clear" id = "sidea">
             <label for="b">b = </label>
-            <input type="number" name="b" class="angle" id = "sideb">
+            <input type="number" name="b" class="angle clear" id = "sideb">
         </div>
-        <button onclick = "calculateHyp()">Calculate</button>
+        <button class="cursor" onclick = "calculateHyp()">Calculate</button>
         <div class="result" id="result"></div>
     </div>
     <div class="calculate-area show" id = "calculate-area">
@@ -53,71 +53,71 @@
         <p>Choose the options below based on the information you have to calculate the area of the triangle</p>
         <div class="options-div" id="options-div">
             <div class="option">
-                <button id="base-height" onclick="selectbtn('base-height')"></button>
+                <button class="cursor" id="base-height" onclick="selectbtn('base-height')"></button>
                 <label for="base-height">Given base and height</label>
             </div>
             <div class="option">
-                <button id="sides" onclick="selectbtn('sides')"></button>
+                <button class="cursor" id="sides" onclick="selectbtn('sides')"></button>
                 <label for="sides">Given length of sides</label>
             </div>
             <div class="option">
-                <button id="equi-triangle" onclick="selectbtn('equi-triangle')"></button>
+                <button class="cursor" id="equi-triangle" onclick="selectbtn('equi-triangle')"></button>
                 <label for="equi-triangle">Given the side of an equilateral triangle</label>
             </div>
             <div class="option">
-                <button id="side-angle" onclick="selectbtn('side-angle')"></button>
+                <button class="cursor" id="side-angle" onclick="selectbtn('side-angle')"></button>
                 <label for="side-angle">Given 2 adjacent sides and included triangle</label>
             </div>
         </div>
         <div class="base-height area">
             <div class="inline center">
                 <label for="base">base = </label>
-                <input type="number" name="base" class="side input-box" id = "base">
+                <input type="number" name="base" class="side input-box clear" id = "base">
             </div>
             <div class="inline center">
                 <label for="height">height = </label>
-                <input type="number" name="height" class="side input-box" id = "height">
+                <input type="number" name="height" class="side input-box clear" id = "height">
             </div>
-            <button class="next-line padd" onclick = "baseHeight('base-height')">Calculate</button>
+            <button class="cursor next-line padd" onclick = "baseHeight('base-height')">Calculate</button>
         </div>
 
         <div class="sides area">
             <div class="inline center">
                 <label for="a">a = </label>
-                <input type="number" name="a" class="side input-box" id = "a">
+                <input type="number" name="a" class="side input-box clear" id = "a">
             </div>
             <div class="inline center">
                 <label for="b">b = </label>
-                <input type="number" name="b" class="side input-box" id = "b">
+                <input type="number" name="b" class="side input-box clear" id = "b">
             </div>
             <div class="inline center">
                 <label for="c">c = </label>
-                <input type="number" name="c" class="side input-box" id = "c">
+                <input type="number" name="c" class="side input-box clear" id = "c">
             </div>
             
-            <button class="next-line padd" onclick = "sides('sides')">Calculate</button>
+            <button class="cursor next-line padd" onclick = "sides('sides')">Calculate</button>
         </div>
 
         <div class="equi-triangle area">
             <label for="abc">a = b = c = </label>
-            <input type="number" name="abc" class="side input-box" id = "abc">
-            <button class="next-line padd" onclick = "equiTriangle('equi-triangle')">Calculate</button>
+            <input type="number" name="abc" class="side input-box clear" id = "abc">
+            <button class="cursor next-line padd" onclick = "equiTriangle('equi-triangle')">Calculate</button>
         </div>
 
         <div class="side-angle area">
             <div class="inline center">
                 <label for="side1">side1 = </label>
-                <input type="number" name="side1" class="side input-box" id = "side1">
+                <input type="number" name="side1" class="side input-box clear" id = "side1">
             </div>
             <div class="inline center">
                 <label for="side2">side2 = </label>
-                <input type="number" name="side2" class="side input-box" id = "side2">
+                <input type="number" name="side2" class="side input-box clear" id = "side2">
             </div>
             <div class="inline center">
                 <label for="angle">&angle; = </label>
-                <input type="number" name="angle" class="angle input-box" id = "angle">
+                <input type="number" name="angle" class="angle input-box clear" id = "angle">
             </div>
-            <button class="next-line padd" onclick = "sideAngle('side-angle')">Calculate</button>
+            <button class="cursor next-line padd" onclick = "sideAngle('side-angle')">Calculate</button>
         </div>
         <div class="result" id="result"></div>
     </div>
@@ -486,7 +486,7 @@
             
         </section>
 
-        <button class="quiz-submit" onclick = "calculatePoints()">Submit</button>
+        <button class="cursor quiz-submit" onclick = "calculatePoints()">Submit</button>
         <small>NOTE : 1 mark for every correct answer. No negative marking.</small>
         <div class="result" id = "result"></div>
     </div>
